@@ -54,4 +54,15 @@
 #sed '10 s/;\\N;\\N/;\\N;\\N;\\N/' r6.csv > item2.csv
 #sed 's/;/,/g' item2.csv > item3.csv
 #sed 's/,\([0-9][0-9][0-9]\)\,\([0-9]\)/,\1\.\2/' item3.csv > output.csv
-sed 's/,/./g' data.csv | sed 's/;/,/g' | sed -E 's,([0-9]{2})/([0-9]{2})/([0-9]{2}),20\3-\2-\1,g' | sed -E 's,([0-9]{1})/([0-9]{1})/([0-9]{4}),\3-0\2-0\1,g' |sed 's/,,/\,\\N,/g' | sed 's/[a-z]/\U&/g'|sed 's/,N/,\\N/g'|sed 's/,$/,\\N/'
+#sed 's/,/./g' data.csv | sed 's/;/,/g' | sed -E 's,([0-9]{2})/([0-9]{2})/([0-9]{2}),20\3-\2-\1,g' | sed -E 's,([0-9]{1})/([0-9]{1})/([0-9]{4}),\3-0\2-0\1,g' |sed 's/,,/\,\\N,/g' | sed 's/[a-z]/\U&/g'|sed 's/,N/,\\N/g'|sed 's/,$/,\\N/'
+sed 's/,/./g' data.csv
+sed 's/;/,/g' data.csv
+sed -E 's,([0-9]{2})/([0-9]{2})/([0-9]{2}),20\3-\2-\1,g' data.csv
+sed -E 's,([0-9]{1})/([0-9]{1})/([0-9]{4}),\3-0\2-0\1,g' data.csv
+sed 's/,,/\,\\N,/g' data.csv
+sed 's/[a-z]/\U&/g' data.csv
+sed 's/,N/,\\N/g' data.csv
+sed 's/,$/,\\N/' data.csv
+
+
+
