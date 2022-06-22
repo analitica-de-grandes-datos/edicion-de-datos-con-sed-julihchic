@@ -53,4 +53,4 @@ sed '9 s/;\\N/;\\N;\\N/' r4.csv > r5.csv
 sed '5 s/;\\N;\\N;/;\\N;\\N;\\N;\\N/' r5.csv > r6.csv
 sed '10 s/;\\N;\\N/;\\N;\\N;\\N/' r6.csv > item2.csv
 sed 's/;/,/g' item2.csv > item3.csv
-sed 's/,\([0-9][0-9][0-9]\)\,\([0-9]\)/,\1\.\2/' item3.csv > output.csv 
+sed 's/,\([0-9][0-9][0-9]\)\,\([0-9]\)/,\1\.\2/' item3.csv > data.csv
